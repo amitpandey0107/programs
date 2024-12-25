@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="hello">C++</h1>
+</body>
+</html>
+
+<script>
+    let names = ["JAVA", "PYTHON","DOTNET","AWS","REACT", "ANGULAR"];
+    let heading = document.getElementById("hello");
+    names.push(heading.innerHTML);
+    let currentIndex = 0;
+    const changeHeading = () => {
+        heading.textContent = names[currentIndex];
+        currentIndex = (currentIndex + 1) % names.length;
+    }
+    heading.addEventListener("click", changeHeading);
+
+</script>
