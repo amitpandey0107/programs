@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .newdivclass{
+        background-color: chocolate;
+        height: 55px;
+        width: 55px;
+        margin: 10px;
+        display: inline-block;
+        padding: 15px;
+    }
+</style>
+<body>
+    <div id="container">
+        <h1>Add Remove Divs</h1>
+        <button onclick="addDiv()">Add</button>
+        <button onclick="removeDiv()">Remove</button>
+    </div>
+</body>
+</html>
+
+<script>
+    function addDiv(){
+        let container = document.getElementById('container');
+        let newdiv = document.createElement('div');
+        newdiv.className='newdivclass'
+        newdiv.textContent='Hello'
+        container.appendChild(newdiv)
+    }
+
+
+    function removeDiv(){
+        let container = document.getElementById('container');
+        let divs = document.querySelectorAll('.newdivclass');
+        if(divs.length > 0) {
+            let del = divs[divs.length - 1]
+            container.removeChild(del)
+        }
+    }
+</script>
